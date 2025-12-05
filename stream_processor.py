@@ -91,7 +91,7 @@ class KafkaStreamProcessor:
         
         # Логируем информацию
         window_sum = sum(item['amount'] for item in self.revenue_windows[product_id])
-        logger.info(f"Покупка: продукт={product_id}, количество=${purchase_amount:.2f}, итого за минуту=${window_sum:.2f}")
+        logger.info(f"Покупка: продукт={product_id}, сумма=${purchase_amount:.2f}, итого за минуту=${window_sum:.2f}")
     
     def _clean_old_records(self, product_id, current_time):
         """Удаление записей старше заданного окна"""
